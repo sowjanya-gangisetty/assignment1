@@ -1,0 +1,34 @@
+{
+	"folders": [
+		{
+			"path": "../../week1"
+		},
+		{
+			"path": "../../week2"
+		},
+		{
+			"path": "../../practice"
+		},
+		{
+			"path": "../../week3"
+		},
+		{
+			"path": "../../week4"
+		},
+		{
+			"path": "../../web-development"
+		},
+		{
+			"path": "../../assignment-1"
+		},
+		{
+			"path": "../../Assignment"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "assignment-1"
+	}
+}

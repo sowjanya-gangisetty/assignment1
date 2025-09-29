@@ -1,0 +1,207 @@
+
+:root {
+    --s: 250px;   /* the size of the image */
+    --b: 8px;     /* the border thickness*/
+    --g: 14px;    /* the gap */
+    --c: #4ECDC4; /* the color */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    color: #222;
+    overflow: scroll; 
+}
+
+body::-webkit-scrollbar {
+    display: none; 
+}
+
+
+body.home {
+  background: url("../images/northern-lights.png") no-repeat center/cover;
+}
+body.about {
+    background: url("../images/northern-lights.png") no-repeat center/cover;
+    height: auto;
+}
+body.contact {
+    background: url("../images/northern-lights.png") no-repeat center/cover;
+    height: auto;
+}
+
+
+header, main, footer,div {
+    background: rgba(255, 255, 255, 0.92);
+    margin: 1rem auto;
+    border-radius: 12px;
+    padding: 1.5rem;
+    max-width: 1000px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    width: 100%;
+}
+
+div {
+    font-family: 'poppins';
+    font-weight: normal;
+    font-style: italic;
+    padding: 0;
+    text-align: center;
+}
+.header {
+  
+}
+
+.header h1 {
+    font-family: 'Lobster Two' ;
+    text-align: center;
+    font-size: 2.2rem;
+    color: #2c3e50;
+}
+
+.menu {
+    text-decoration: none;
+    font-weight: bold;
+    color: #2c3e50;
+    padding: 0.3rem 0.6rem;
+    transition: all 0.3s ease;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 0.8rem;
+}
+
+.menu a:link {
+    color: black;
+    text-decoration: none;
+}
+.menu a:hover,
+.menu a.active {
+   color: #4a90e2;
+   border-bottom: 2px double #4a90e2;
+  
+}
+
+.content {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.content h2 {
+    font-family: 'Lobster Two' ;
+    font-weight: 200;
+}
+
+.intro h2 {
+    font-family: 'Lobster Two';
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
+    text-align: center
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/*label {
+  font-weight: bold;
+  color: #2c3e50;
+}*/
+.required:after {
+    content:" *";
+    color: red;
+}
+input, textarea {
+    padding: 0.8rem;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+button {
+    padding: 0.9rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #4a90e2;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #357ABD;
+}
+
+.footer {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: auto;
+    color: #444;
+}
+
+/* To create a variable with global scope, declare it inside the :root
+To create a variable with local scope, declare it inside the selector that is going to use it.*/
+img {
+    width: var(--s);
+    aspect-ratio: 1;
+    outline: calc(var(--s)/2) solid #0009;
+    outline-offset: calc(var(--s)/-2);
+    cursor: pointer;
+    transition: .3s;
+}
+img:hover {
+    outline: var(--b) solid var(--c);
+    outline-offset: var(--g);
+}
+img + img {
+    border-radius: 50%;
+}
+
+
+
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .header h1 {
+    font-size: 1.8rem;
+  }
+}
