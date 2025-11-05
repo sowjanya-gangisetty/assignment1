@@ -1,9 +1,12 @@
-
 :root {
-    --s: 250px;   /* the size of the image */
-    --b: 8px;     /* the border thickness*/
-    --g: 14px;    /* the gap */
-    --c: #4ECDC4; /* the color */
+    --image_size: 250px;
+    /*  size of the image */
+    --border_thickness: 8px;
+    /*  outline border thickness */
+    --gap_offset: 14px;
+    --outline_color: #4ECDC4;
+    /*  color of the outline boarder */
+
 }
 
 * {
@@ -19,34 +22,39 @@ body {
     flex-direction: column;
     height: 100vh;
     color: #222;
-    overflow: scroll; 
+    overflow: scroll;
 }
 
 body::-webkit-scrollbar {
-    display: none; 
+    display: none;
 }
 
 
 body.home {
-  background: url("../images/northern-lights.png") no-repeat center/cover;
+    background: url("../images/northern-lights.png") no-repeat center/cover;
 }
+
 body.about {
     background: url("../images/northern-lights.png") no-repeat center/cover;
     height: auto;
 }
+
 body.contact {
     background: url("../images/northern-lights.png") no-repeat center/cover;
     height: auto;
 }
 
 
-header, main, footer,div {
+header,
+main,
+footer,
+div {
     background: rgba(255, 255, 255, 0.92);
     margin: 1rem auto;
     border-radius: 12px;
     padding: 1.5rem;
     max-width: 1000px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     width: 100%;
 }
 
@@ -57,12 +65,11 @@ div {
     padding: 0;
     text-align: center;
 }
-.header {
-  
-}
+
+.header {}
 
 .header h1 {
-    font-family: 'Lobster Two' ;
+    font-family: 'Lobster Two';
     text-align: center;
     font-size: 2.2rem;
     color: #2c3e50;
@@ -89,11 +96,12 @@ div {
     color: black;
     text-decoration: none;
 }
+
 .menu a:hover,
 .menu a.active {
-   color: #4a90e2;
-   border-bottom: 2px double #4a90e2;
-  
+    color: #4a90e2;
+    border-bottom: 2px double #4a90e2;
+
 }
 
 .content {
@@ -107,7 +115,7 @@ div {
 }
 
 .content h2 {
-    font-family: 'Lobster Two' ;
+    font-family: 'Lobster Two';
     font-weight: 200;
 }
 
@@ -123,7 +131,7 @@ div {
     width: 100%;
     height: auto;
     border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -138,10 +146,12 @@ form {
   color: #2c3e50;
 }*/
 .required:after {
-    content:" *";
+    content: " *";
     color: red;
 }
-input, textarea {
+
+input,
+textarea {
     padding: 0.8rem;
     border: 1px solid #bbb;
     border-radius: 8px;
@@ -176,32 +186,36 @@ button:hover {
     color: #444;
 }
 
-/* To create a variable with global scope, declare it inside the :root
-To create a variable with local scope, declare it inside the selector that is going to use it.*/
+
 img {
-    width: var(--s);
+    width: var(--image_size);
     aspect-ratio: 1;
-    outline: calc(var(--s)/2) solid #0009;
-    outline-offset: calc(var(--s)/-2);
+    /*https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/aspect-ratio */
+    outline: calc(var(--image_size)/2) solid #0009;
+    outline-offset: calc(var(--image_size)/-2);
+    /*The outline-offset property adds a space between an outline and the edge/border of an element.
+    a negative value, moves the outline inward*/
     cursor: pointer;
     transition: .3s;
 }
+
 img:hover {
-    outline: var(--b) solid var(--c);
-    outline-offset: var(--g);
+    outline: var(--border_thickness) solid var(--outline_color);
+    outline-offset: 14px;
 }
-img + img {
+
+img+img {
     border-radius: 50%;
 }
 
 
 
 @media (max-width: 768px) {
-  .content {
-    grid-template-columns: 1fr;
-  }
+    .content {
+        grid-template-columns: 1fr;
+    }
 
-  .header h1 {
-    font-size: 1.8rem;
-  }
+    .header h1 {
+        font-size: 1.8rem;
+    }
 }
